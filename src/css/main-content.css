@@ -1,0 +1,60 @@
+:root {
+  --Font-normal: 500;
+  --Font-medium: 600;
+  --Font-bold: 700;
+
+  --font-size-small: 1.4rem;
+  --font-size-normal: 1.8rem;
+  --font-size-medium: 2.2rem;
+  --font-size-big: 2.8rem;
+
+  --firts-color: #2a7ae4;
+  --color-bg: #f5f5f5;
+  --color-white: #ffffff;
+  --first-color-text: #464646;
+  --second-color-text: #a2a2a2;
+}
+
+.main {
+  /* background-color: aquamarine; */
+}
+.main__section-starwarks,
+.main__section-consoles,
+.main__section-various {
+  padding: 1.8rem;
+}
+.main__head-section {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__section-title {
+  font-size: var(--font-size-medium);
+  font-weight: var(--Font-bold);
+  color: var(--first-color-text);
+}
+
+.main__btn-more-content {
+  font-size: var(--font-size-small);
+  color: var(--firts-color);
+  font-weight: var(--Font-bold);
+}
+.arrow {
+  margin-left: 0.4rem;
+
+  width: 25px;
+  height: 25px;
+}
+
+.main__section-consoles {
+}
+.main__section-various {
+}
