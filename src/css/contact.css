@@ -1,0 +1,97 @@
+:root {
+  --Font-normal: 500;
+  --Font-medium: 600;
+  --Font-bold: 700;
+
+  --font-size-small: 1.4rem;
+  --font-size-normal: 1.8rem;
+  --font-size-medium: 2.2rem;
+  --font-size-big: 2.8rem;
+
+  --firts-color: #2a7ae4;
+  --color-bg: #f5f5f5;
+  --second-color-bg: #eaf2fd;
+  --color-white: #ffffff;
+  --first-color-text: #464646;
+  --second-color-text: #a2a2a2;
+  --color-bar-form: #c8c8c8;
+}
+
+.contact {
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact__title {
+  color: var(--first-color-text);
+  font-size: var(--font-size-medium);
+  font-weight: var(--Font-bold);
+}
+
+.contact__field {
+  background-color: var(--color-white);
+  margin: 2rem 0;
+  padding: 1rem;
+  border-bottom: 2px solid var(--color-bar-form);
+  border-radius: 0.4rem;
+}
+
+.contact__field-label {
+  color: var(--second-color-text);
+  font-size: var(--font-size-normal);
+  font-weight: var(--Font-normal);
+}
+.contact__field-input {
+  width: 100%;
+  margin-top: 1rem;
+  outline: none;
+
+  color: var(--primary-color-text);
+  font-size: var(--font-size-small);
+  font-weight: var(--Font-normal);
+}
+.contact__field--message {
+  color: var(--primary-color-text);
+  font-size: var(--font-size-small);
+  font-weight: var(--Font-normal);
+}
+.contact__field-textarea {
+  margin-top: 1rem;
+  width: 100%;
+  outline: none;
+  resize: none;
+}
+
+.contact__btn {
+  width: 180px;
+  text-align: center;
+  font-size: var(--font-size-normal);
+  font-weight: var(--Font-medium);
+  color: var(--color-white);
+
+  background-color: var(--firts-color);
+  padding: 1.8rem 0;
+
+  transition: all 0.25s ease-in-out;
+}
+
+.contact__btn:hover {
+  background-color: transparent;
+  color: var(--firts-color);
+  outline: 2px solid var(--firts-color);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .contact {
+    grid-column: 2/-1;
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact {
+    grid-column: 3/-1;
+    grid-row: 1/-1;
+  }
+}
