@@ -14,12 +14,13 @@
 
     <!-- css -->
     <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/home-style/header.css" />
+    <link rel="stylesheet" href="./src/css/login-style/header.css" />
     <link rel="stylesheet" href="./src/css/home-style/about-us.css" />
     <link rel="stylesheet" href="./src/css/home-style/contact.css" />
     <link rel="stylesheet" href="./src/css/home-style/footer.css" />
+    <link rel="stylesheet" href="./src/css/add-product-style/add-product.css" />
 
-    <title>AluraGreek</title>
+    <title>add product</title>
   </head>
   <body>
     <header class="header">
@@ -48,7 +49,72 @@
     </header>
 
     <main class="main">
-      <h1>adminitracion de productos</h1>
+      <!-- add product -->
+      <section class="add-product">
+        <h2 class="add-product__title">Agregar nuevo producto</h2>
+
+        <form class="add-product__from">
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="urlImg">
+              URL de la imagen
+            </label>
+            <input
+              class="add-product__field-input"
+              name="urlImg"
+              type="text"
+              id="urlImg"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="urlImg">
+              Categoría
+            </label>
+            <input
+              class="add-product__field-input"
+              name="urlImg"
+              type="text"
+              id="urlImg"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="name">
+              Nombre del producto
+            </label>
+            <input
+              class="add-product__field-input"
+              name="name"
+              type="text"
+              id="name"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="price">
+              Precio del producto
+            </label>
+            <input
+              class="add-product__field-input"
+              name="price"
+              type="text"
+              id="price"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="description">
+              Descripción del producto
+            </label>
+
+            <textarea
+              class="add-product__field-textarea"
+              name="description"
+              id="description"
+              cols="1"
+              rows="2"
+            ></textarea>
+          </div>
+
+          <button class="add-product__btn">Agregar Productos</button>
+        </form>
+      </section>
 
       <!-- Sobre nosotros y contactos -->
       <section class="about-contact">

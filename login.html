@@ -14,12 +14,13 @@
 
     <!-- css -->
     <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/home-style/header.css" />
+    <link rel="stylesheet" href="./src/css/login-style/header.css" />
     <link rel="stylesheet" href="./src/css/home-style/about-us.css" />
     <link rel="stylesheet" href="./src/css/home-style/contact.css" />
     <link rel="stylesheet" href="./src/css/home-style/footer.css" />
+    <link rel="stylesheet" href="./src/css/login-style/login.css" />
 
-    <title>AluraGreek</title>
+    <title>Login</title>
   </head>
   <body>
     <header class="header">
@@ -48,7 +49,34 @@
     </header>
 
     <main class="main">
-      <h1>login</h1>
+      <!-- login -->
+      <section class="login">
+        <form class="login__from">
+          <h2 class="login__title">Inicio Sesión</h2>
+          <div class="login__field">
+            <input
+              class="login__field-input"
+              name="email"
+              placeholder="Escribe tu correo electronico"
+              type="email"
+              id="email"
+              required
+            />
+          </div>
+          <div class="login__field login__field--password">
+            <input
+              class="login__field-input"
+              name="password"
+              placeholder="Escribe tu contraseña"
+              type="password"
+              id="password"
+              required
+            />
+          </div>
+
+          <a href="/administration-product.html" class="login__btn">Entrar</a>
+        </form>
+      </section>
 
       <!-- Sobre nosotros y contactos -->
       <section class="about-contact">
