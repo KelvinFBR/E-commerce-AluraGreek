@@ -84,8 +84,8 @@
   cursor: pointer;
 }
 
-#name__validate,
-#message__validate {
+.name__validate,
+.message__validate {
   display: inline-block;
   color: var(--form-invalid-color);
   font-size: var(--font-size-small);
@@ -96,8 +96,8 @@
   transition: all 0.25s ease-in-out;
 }
 
-#name__validate.active,
-#message__validate.active {
+.name__validate.active,
+.message__validate.active {
   transform: scale(1);
   opacity: 1;
 }

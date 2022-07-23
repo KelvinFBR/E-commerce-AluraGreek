@@ -1,6 +1,6 @@
 const form = document.querySelector(".contact__from");
-const fieldValidateName = document.querySelector("#name__validate");
-const fieldValidateMessage = document.querySelector("#message__validate");
+const fieldValidateName = document.querySelector(".name__validate");
+const fieldValidateMessage = document.querySelector(".message__validate");
 
 const formLogin = document.querySelector(".login__from");
 const fieldValidate = document.querySelector(".field__validate");
@@ -49,7 +49,7 @@ const loading = () => {
 const loadPageAdmin = () => {
   setTimeout(() => {
     // load admin page
-    window.location = "../../administration-product.html";
+    window.location = "./administration-product.html";
   }, 2200);
 };
 
