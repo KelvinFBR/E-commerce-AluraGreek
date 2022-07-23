@@ -23,6 +23,9 @@
     <title>Login</title>
   </head>
   <body>
+    <div class="loading__container">
+      <img class="loading" src="./src/assets/img/loading.svg" alt="loading" />
+    </div>
     <header class="header">
       <nav class="header__nav nav">
         <div class="nav__logo-container">
@@ -41,6 +44,7 @@
             <img
               class="nav__search"
               src="./src/assets/icon/Icon-search.svg"
+              src="src/js/"
               alt="icono de busqueda"
             />
           </label>
@@ -60,7 +64,6 @@
               placeholder="Escribe tu correo electronico"
               type="email"
               id="email"
-              required
             />
           </div>
           <div class="login__field login__field--password">
@@ -70,11 +73,17 @@
               placeholder="Escribe tu contraseña"
               type="password"
               id="password"
-              required
             />
           </div>
+          <span class="field__validate"></span>
 
-          <a href="./administration-product.html" class="login__btn">Entrar</a>
+          <button
+            type="submit"
+            href="./administration-product.html"
+            class="login__btn"
+          >
+            Entrar
+          </button>
         </form>
       </section>
 
@@ -134,15 +143,17 @@
 
           <form class="contact__from">
             <div class="contact__field contact__field--name">
+              <span id="name__validate"></span>
               <label class="contact__field-label" for="name">Nombre</label>
               <input
                 class="contact__field-input"
-                name="nombre"
+                name="name"
                 type="text"
                 id="name"
               />
             </div>
             <div class="contact__field contact__field--message">
+              <span id="message__validate"></span>
               <label class="contact__field-label" for="message">
                 Escribe tu mensaje
               </label>
@@ -156,7 +167,7 @@
               ></textarea>
             </div>
 
-            <button class="contact__btn">Enviar mensaje</button>
+            <button type="submit" class="contact__btn">Enviar mensaje</button>
           </form>
         </section>
       </section>
@@ -168,6 +179,6 @@
       </p>
     </footer>
 
-    <script type="module" src="./src/index.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
   </body>
 </html>

@@ -15,6 +15,8 @@
   --first-color-text: #464646;
   --second-color-text: #a2a2a2;
   --color-bar-form: #c8c8c8;
+
+  --form-invalid-color: #e74645;
 }
 
 .contact {
@@ -80,6 +82,24 @@
   color: var(--firts-color);
   outline: 2px solid var(--firts-color);
   cursor: pointer;
+}
+
+#name__validate,
+#message__validate {
+  display: inline-block;
+  color: var(--form-invalid-color);
+  font-size: var(--font-size-small);
+  font-weight: var(--Font-medium);
+  margin-bottom: 0.4rem;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+#name__validate.active,
+#message__validate.active {
+  transform: scale(1);
+  opacity: 1;
 }
 
 @media (min-width: 768px) {

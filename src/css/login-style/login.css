@@ -15,6 +15,9 @@
   --first-color-text: #464646;
   --second-color-text: #a2a2a2;
   --color-bar-form: #c8c8c8;
+
+  --form-invalid-color: #e74645;
+  --form-valid-color: #04d939;
 }
 
 body {
@@ -22,6 +25,7 @@ body {
 }
 
 .login {
+  position: relative;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -83,6 +87,74 @@ body {
   color: var(--firts-color);
   outline: 2px solid var(--firts-color);
   cursor: pointer;
+}
+
+.field__validate {
+  display: inline-block;
+  width: 100%;
+  color: var(--form-invalid-color);
+  font-size: var(--font-size-small);
+  font-weight: var(--Font-medium);
+  margin-bottom: 0.8rem;
+  text-align: center;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.field__validate.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.loading__container {
+  background-color: #464646ec;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.loading__container.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+
+  -webkit-animation: loading 1s normal linear infinite;
+  animation: loading 1s normal linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, 180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
 }
 
 @media (min-width: 1440px) {

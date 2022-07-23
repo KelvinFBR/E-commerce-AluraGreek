@@ -1,0 +1,1 @@
+import "./form-validate.js";
