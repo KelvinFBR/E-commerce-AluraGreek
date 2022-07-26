@@ -173,11 +173,28 @@
     <template id="template-card">
       <div class="main__card">
         <div class="main__card-img-container">
-          <img class="main__card-img" src="" alt="cartas de producto" />
+          <div class="main__card-action">
+            <img
+              class="main__card-img-action"
+              src="./src/assets/icon/delete-icon.svg"
+              alt="icono eliminar"
+            />
+            <img
+              class="main__card-img-action"
+              src="./src/assets/icon/edit-icon.svg"
+              alt="icono editar"
+            />
+          </div>
+
+          <img
+            class="main__card-img"
+            src="https://i.imgur.com/kkPW4EM.png"
+            alt="producto "
+          />
         </div>
         <h2 class="main__card-title">Producto XYZ</h2>
         <p class="main__card-price">$60,00</p>
-        <a class="main__card-link" href="">Ver Producto</a>
+        <a class="main__card-link" href="#">Ver Producto</a>
       </div>
     </template>
 
