@@ -1,4 +1,4 @@
-const templateCard = document.querySelector("#template-card").content;
+const templateCard = document.querySelector("#template-card")?.content;
 const cardContainer = document.querySelectorAll(".main__section-cards");
 
 // console.log(cardContainer);
@@ -70,7 +70,7 @@ const createCards = (data, typeProduct) => {
       break;
 
     case "All":
-      typeProductIndex = 2;
+      typeProductIndex = 0;
       break;
 
     default:
@@ -103,32 +103,29 @@ const createCards = (data, typeProduct) => {
   cardContainer[typeProductIndex].appendChild(fragment);
 };
 
-const getDataProduct = async () => {
+const getDataProduct = async (typeProducts) => {
   try {
     const res = await fetch(
       "https://orac-e-commerce-project.herokuapp.com/productos"
     );
     const data = await res.json();
 
-    // createCards(data, "StarWars");
-    // createCards(data, "Consolas");
-    // createCards(data, "Diversos");
-    createCards(data, "All");
+    typeProducts.forEach((type) => {
+      createCards(data, type);
+    });
   } catch (error) {
     console.log(error);
   } finally {
   }
 };
 
-getDataProduct();
-
-console.log(
-  document.addEventListener("click", (e) => {
-    if (e.target.matches(".main__card-link")) {
-      e.preventDefault();
-      console.log(e.target.dataset.id);
-    }
-  })
-);
+document.addEventListener("click", (e) => {
+  if (e.target.matches(".main__card-link")) {
+    e.preventDefault();
+    console.log(e.target.dataset.id);
+  }
+});
 
 // console.log(window.location.pathname);
+
+export { getDataProduct };
