@@ -21,11 +21,11 @@
 .main__section-starwars,
 .main__section-consoles,
 .main__section-various {
-  padding: 1.8rem;
+  padding: 2.8rem;
 }
+
 .main__head-section {
   width: 100%;
-
   display: flex;
   justify-content: space-between;
 }
