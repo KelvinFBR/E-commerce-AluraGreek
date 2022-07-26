@@ -88,6 +88,11 @@ const createCards = (data, typeProduct) => {
       clone.querySelector(".main__card-price").textContent = `$${item.precio}`;
       clone.querySelector(".main__card-link").dataset.id = item.id;
 
+      if (typeProduct === "All") {
+        clone.querySelector(".action__delete").dataset.id = item.id;
+        clone.querySelector(".action__edit").dataset.id = item.id;
+      }
+
       clone
         .querySelector(".main__card-img")
         .setAttribute(
@@ -105,9 +110,7 @@ const createCards = (data, typeProduct) => {
 
 const getDataProduct = async (typeProducts) => {
   try {
-    const res = await fetch(
-      "https://orac-e-commerce-project.herokuapp.com/productos"
-    );
+    const res = await fetch("https://aluragreek-api.herokuapp.com/productos");
     const data = await res.json();
 
     typeProducts.forEach((type) => {

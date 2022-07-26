@@ -55,13 +55,15 @@ const loadPageAdmin = () => {
 
 const fetchData = async (email, pass) => {
   try {
-    const res = await fetch(
-      "https://orac-e-commerce-project.herokuapp.com/perfil"
-    );
+    const res = await fetch("https://aluragreek-api.herokuapp.com/perfil");
 
     const data = await res.json();
 
-    data.forEach(({ email: userEmail, password: userPass }) => {
+    console.log(data);
+    data.forEach((user) => {
+      console.log(user);
+      const { email: userEmail, password: userPass } = user;
+      console.log({ userEmail, userPass });
       if (userEmail === email && userPass === pass) {
         fieldValidate.textContent = "";
 
@@ -69,9 +71,8 @@ const fetchData = async (email, pass) => {
         loadingContainer.classList.add("active");
 
         loadPageAdmin();
-        return;
       } else {
-        throw "Contraseña Incorrecta/Correo Incorrecto";
+        return "Contraseña Incorrecta/Correo Incorrecto";
       }
     });
   } catch (error) {
