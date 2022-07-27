@@ -8,6 +8,8 @@ console.log(pathName);
 
 if (/index.html/g.test(pathName) || /E-commerce-AluraGreek/g.test(pathName)) {
   getDataProduct(["StarWars", "Consolas", "Diversos"]);
-} else if (/administration-product.html/g.test(pathName)) {
+} else if (
+  /E-commerce-AluraGreek\/administration-product.html/g.test(pathName)
+) {
   getAllDataProduct();
 }
