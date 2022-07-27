@@ -1,3 +1,5 @@
+import { authentication } from "./auth.js";
+
 const form = document.querySelector(".contact__from");
 const fieldValidateName = document.querySelector(".name__validate");
 const fieldValidateMessage = document.querySelector(".message__validate");
@@ -68,6 +70,7 @@ const fetchData = async (email, pass) => {
         //* active loading
         loadingContainer.classList.add("active");
 
+        authentication();
         loadPageAdmin();
       } else {
         throw "Contraseña Incorrecta/Correo Incorrecto";

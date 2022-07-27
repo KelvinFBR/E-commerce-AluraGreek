@@ -21,4 +21,25 @@ const alertSuccess = (img) => {
   });
 };
 
-export { alertSuccess };
+const alertAccessDenied = () => {
+  document.querySelector("main").textContent = "";
+  Swal.fire({
+    position: "center",
+    icon: "warning",
+    title: "Acceso Denegado, Iniciar sesion",
+    showConfirmButton: false,
+    width: "34em",
+  });
+};
+
+const alertAccessAllow = () => {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Usuario identificado",
+    showConfirmButton: false,
+    width: "34em",
+  });
+};
+
+export { alertAccessAllow, alertSuccess, alertAccessDenied };
