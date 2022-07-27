@@ -1,5 +1,6 @@
 import "./form-validate.js";
 import { getDataProduct } from "./cards.js";
+import "./add-product.js";
 
 const pathName = window.location.pathname;
 

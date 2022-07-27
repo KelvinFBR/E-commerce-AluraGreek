@@ -97,8 +97,8 @@ const createCards = (data, typeProduct) => {
         .querySelector(".main__card-img")
         .setAttribute(
           "src",
-          /https/g.test(item.images)
-            ? item.images
+          /https/g.test(item.imagen)
+            ? item.imagen
             : images[typeProduct][item.imagen]
         );
 

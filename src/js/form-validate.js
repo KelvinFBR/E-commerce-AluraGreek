@@ -72,7 +72,7 @@ const fetchData = async (email, pass) => {
 
         loadPageAdmin();
       } else {
-        return "Contraseña Incorrecta/Correo Incorrecto";
+        throw "Contraseña Incorrecta/Correo Incorrecto";
       }
     });
   } catch (error) {
