@@ -6,7 +6,7 @@ const pathName = window.location.pathname;
 
 console.log(pathName);
 
-if (/index.html/g.test(pathName) || /E-commerce-AluraGreek\//g.test(pathName)) {
+if (/E-commerce-AluraGreek\/index.html/g.test(pathName)) {
   getDataProduct(["StarWars", "Consolas", "Diversos"]);
 } else if (
   /E-commerce-AluraGreek\/administration-product.html/g.test(pathName) ||
