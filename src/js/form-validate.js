@@ -59,9 +59,7 @@ const fetchData = async (email, pass) => {
 
     const data = await res.json();
 
-    console.log(data);
     data.forEach((user) => {
-      console.log(user);
       const { email: userEmail, password: userPass } = user;
       console.log({ userEmail, userPass });
       if (userEmail === email && userPass === pass) {
@@ -78,7 +76,7 @@ const fetchData = async (email, pass) => {
   } catch (error) {
     throw new Error(error);
   } finally {
-    // loading function
+    //* loading function
     loading();
   }
 };
@@ -115,3 +113,5 @@ formLogin?.addEventListener("submit", (e) => {
   fieldValidate.textContent =
     "Contraseña mayor a 4 caracteres/Correo no valido";
 });
+
+export { loadPageAdmin };

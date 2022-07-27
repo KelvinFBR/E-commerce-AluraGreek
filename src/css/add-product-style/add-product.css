@@ -20,7 +20,18 @@
 body {
   background-color: var(--color-bg);
 }
+/* alert  */
+button.swal2-styled.swal2-confirm,
+button.swal2-styled.swal2-deny {
+  font-size: 1.4rem;
+}
 
+/* header */
+.header__nav {
+  justify-content: space-between;
+}
+
+/* add product body */
 .add-product {
   width: 100%;
   max-width: 400px;
@@ -103,5 +114,23 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 1440px) {
+.header__btn-administration {
+  font-size: var(--font-size-small);
+  background-color: transparent;
+  outline: 2px solid var(--firts-color);
+
+  color: var(--firts-color);
+  font-weight: var(--Font-normal);
+  transition: all 0.25s ease-in-out;
+  padding: 1.4rem;
+}
+
+.header__btn-administration:hover {
+  background-color: var(--firts-color);
+  color: var(--color-white);
+  outline: 2px solid var(--firts-color);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
 }

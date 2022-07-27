@@ -1,3 +1,5 @@
+import { alertSuccess } from "./alerts.js";
+
 const formProduct = document.querySelector(".add-product__from");
 
 const pathName = window.location.pathname;
@@ -45,10 +47,10 @@ if (/add-product.html/g.test(pathName)) {
         id: new Date().getTime(),
       };
       addProduct(dataProduct);
-      console.log(dataProduct);
-    }
 
-    // console.log("h");
+      //* alert producto agregado
+      alertSuccess(img);
+    }
 
     formProduct.reset();
   });
