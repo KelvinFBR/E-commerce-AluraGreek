@@ -5,6 +5,8 @@
 
 /* nav */
 .nav {
+  position: relative;
+  z-index: 2;
   background-color: var(--color-white);
   width: 100%;
   display: flex;
@@ -45,6 +47,7 @@
 
 .nav__search {
   width: 40px;
+  cursor: pointer;
 }
 
 .nav__logo {

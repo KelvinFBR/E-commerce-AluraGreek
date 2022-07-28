@@ -1,6 +1,7 @@
 import "./form-validate.js";
 import "./add-product.js";
 import "./auth.js";
+import "./search.js";
 import { getAllDataProduct, getDataProduct } from "./cards.js";
 import {
   authenticationAdminPage,
