@@ -1,0 +1,18 @@
+.main__product-search.admin {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  justify-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.main__product-search.index {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  justify-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}

@@ -8,6 +8,7 @@ import {
   authenticationInit,
   authenticationLoginPage,
 } from "./auth.js";
+import { searchInit } from "./search.js";
 
 const pathName = window.location.pathname;
 console.log(pathName);
@@ -19,12 +20,14 @@ if (
   /index.html/g.test(pathName)
 ) {
   getDataProduct(["StarWars", "Consolas", "Diversos"]);
+  searchInit(false);
 } else if (
   /E-commerce-AluraGreek\/administration-product.html/g.test(pathName) ||
   /administration-product.html/g.test(pathName)
 ) {
   authenticationAdminPage();
   getAllDataProduct();
+  searchInit("admin");
 } else if (
   /E-commerce-AluraGreek\/login.html/g.test(pathName) ||
   /login.html/g.test(pathName)

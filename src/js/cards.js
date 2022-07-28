@@ -28,7 +28,6 @@ const createCards = (data, typeProduct) => {
   }
 
   // * limpieza container cards;
-  console.log({ cardContainer, typeProductIndex, typeProduct });
   cardContainer[typeProductIndex].textContent = "";
 
   data.forEach((item) => {
