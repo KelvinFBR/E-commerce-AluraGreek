@@ -1,5 +1,8 @@
+import { createModal, handleModalClose } from "./modal.js";
+
 const templateCard = document.querySelector("#template-card")?.content;
 const cardContainer = document.querySelectorAll(".main__section-cards");
+const modal = document.querySelector("#modal");
 
 let typeProductIndex;
 
@@ -54,7 +57,6 @@ const getAllDataProduct = async () => {
     const res = await fetch("https://aluragreek-api.herokuapp.com/productos");
     const data = await res.json();
 
-    console.log(data);
     createCards(data, "All");
   } catch (error) {
     console.log(error);
@@ -71,7 +73,6 @@ const getDataProduct = (typeProduct) => {
 
       const data = await res.json();
 
-      console.log(data);
       createCards(data, type);
     });
   } catch (error) {
@@ -84,7 +85,9 @@ const getDataProduct = (typeProduct) => {
 document.addEventListener("click", (e) => {
   if (e.target.matches(".main__card-link")) {
     e.preventDefault();
-    console.log(e.target.dataset.id);
+    modal.classList.add("active");
+
+    createModal(e.target.dataset.id);
   }
 });
 

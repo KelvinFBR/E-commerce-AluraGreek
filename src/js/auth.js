@@ -31,8 +31,6 @@ const authenticationAdminPage = () => {
 
       return;
     }
-
-    console.log("permisos concedido");
   }
 };
 

@@ -11,7 +11,6 @@ import {
 import { searchInit } from "./search.js";
 
 const pathName = window.location.pathname;
-console.log(pathName);
 
 authenticationInit();
 
