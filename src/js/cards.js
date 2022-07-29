@@ -30,19 +30,19 @@ const createCards = (data, typeProduct) => {
   // * limpieza container cards;
   cardContainer[typeProductIndex].textContent = "";
 
-  data.forEach((item) => {
+  data.forEach(({ nombre, precio, id, imagen }) => {
     // ! implementar destructuring - este es  por filtrado
     const clone = templateCard.cloneNode(true);
-    clone.querySelector(".main__card-title").textContent = item.nombre;
-    clone.querySelector(".main__card-price").textContent = `$${item.precio}`;
-    clone.querySelector(".main__card-link").dataset.id = item.id;
+    clone.querySelector(".main__card-title").textContent = nombre;
+    clone.querySelector(".main__card-price").textContent = `$${precio}`;
+    clone.querySelector(".main__card-link").dataset.id = id;
 
     if (typeProduct === "All") {
-      clone.querySelector(".action__delete").dataset.id = item.id;
-      clone.querySelector(".action__edit").dataset.id = item.id;
+      clone.querySelector(".action__delete").dataset.id = id;
+      clone.querySelector(".action__edit").dataset.id = id;
     }
 
-    clone.querySelector(".main__card-img").setAttribute("src", item.imagen);
+    clone.querySelector(".main__card-img").setAttribute("src", imagen);
 
     fragment.appendChild(clone);
   });

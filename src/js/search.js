@@ -1,31 +1,31 @@
 const iconSearch = document.querySelector(".nav__search");
 const barSearch = document.querySelector(".nav__search-mobile-container");
-const inputSearch = document.querySelector("#search-mobile");
+const inputSearchMobile = document.querySelector("#search-mobile");
+const inputSearchDesktop = document.querySelector("#search");
 const cardMain = document.querySelector(".main__product-search");
 const templateCard = document.querySelector("#template-card")?.content;
 
-let allProduct;
+let allProduct = [];
 
 const createCards = (data, page) => {
   const fragment = document.createDocumentFragment();
 
-  console.log(page);
   // * limpieza container cards;
   cardMain.textContent = "";
 
-  data.forEach((item) => {
+  data.forEach(({ nombre, precio, id, imagen }) => {
     // ! implementar destructuring - este es  por filtrado
     const clone = templateCard.cloneNode(true);
-    clone.querySelector(".main__card-title").textContent = item.nombre;
-    clone.querySelector(".main__card-price").textContent = `$${item.precio}`;
-    clone.querySelector(".main__card-link").dataset.id = item.id;
+    clone.querySelector(".main__card-title").textContent = nombre;
+    clone.querySelector(".main__card-price").textContent = `$${precio}`;
+    clone.querySelector(".main__card-link").dataset.id = id;
 
     if (page === "admin") {
-      clone.querySelector(".action__delete").dataset.id = item.id;
-      clone.querySelector(".action__edit").dataset.id = item.id;
+      clone.querySelector(".action__delete").dataset.id = id;
+      clone.querySelector(".action__edit").dataset.id = id;
     }
 
-    clone.querySelector(".main__card-img").setAttribute("src", item.imagen);
+    clone.querySelector(".main__card-img").setAttribute("src", imagen);
 
     fragment.appendChild(clone);
   });
@@ -35,14 +35,9 @@ const createCards = (data, page) => {
 const searchProduct = async (word, page) => {
   const regExp = new RegExp(word, "i");
 
-  console.log(regExp);
-  console.log(allProduct);
-  console.log(word);
   const products = allProduct.filter(
     (prod) => regExp.test(prod.categoria) || regExp.test(prod.nombre)
   );
-  console.log(products);
-  // console.log(data);
   createCards(products, page);
 };
 
@@ -58,25 +53,31 @@ const getAllDataProduct = async () => {
   }
 };
 
+const inputEventListener = (input, page) => {
+  //* get data for to searching
+  input.addEventListener("focus", () => {
+    getAllDataProduct();
+  });
+
+  //* get word search mobile & desktop
+  input.addEventListener("keyup", () => {
+    cardMain.classList.add("index");
+    const wordSearch = [`${input.value}`];
+    searchProduct(wordSearch, page);
+  });
+};
+
 const searchInit = (page) => {
   //* focus input search
   iconSearch.addEventListener("click", () => {
     barSearch.classList.toggle("active");
-    inputSearch.focus();
+    inputSearchMobile.focus();
   });
 
-  //* get data for to searching
-  inputSearch.addEventListener("focus", () => {
-    console.log("focus");
-    getAllDataProduct();
-  });
-
-  //* get word search
-  inputSearch.addEventListener("keyup", () => {
-    cardMain.classList.add("index");
-    const wordSearch = [`${inputSearch.value}`];
-    searchProduct(wordSearch, page);
-  });
+  // mobile
+  inputEventListener(inputSearchMobile, page);
+  // desktop
+  inputEventListener(inputSearchDesktop, page);
 };
 
 export { searchInit };
