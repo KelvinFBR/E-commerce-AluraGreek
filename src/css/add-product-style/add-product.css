@@ -34,8 +34,9 @@ button.swal2-styled.swal2-deny {
 /* add product body */
 .add-product {
   width: 100%;
-  max-width: 400px;
+  max-width: 480px;
   margin: 2rem auto;
+  padding: 0 2rem;
 }
 .add-product__title {
   text-align: center;
@@ -43,6 +44,7 @@ button.swal2-styled.swal2-deny {
   color: var(--first-color-text);
   font-size: var(--font-size-medium);
   font-weight: var(--Font-bold);
+  line-height: 2rem;
 }
 .add-product__from {
   width: 100%;
@@ -100,7 +102,6 @@ button.swal2-styled.swal2-deny {
   font-size: var(--font-size-normal);
   font-weight: var(--Font-medium);
   color: var(--color-white);
-
   background-color: var(--firts-color);
   padding: 1.8rem 0;
 
@@ -120,9 +121,11 @@ button.swal2-styled.swal2-deny {
   outline: 2px solid var(--firts-color);
 
   color: var(--firts-color);
-  font-weight: var(--Font-normal);
+  font-weight: var(--Font-medium);
   transition: all 0.25s ease-in-out;
   padding: 1.4rem;
+  margin-left: 2rem;
+  text-align: center;
 }
 
 .header__btn-administration:hover {
@@ -130,7 +133,4 @@ button.swal2-styled.swal2-deny {
   color: var(--color-white);
   outline: 2px solid var(--firts-color);
   cursor: pointer;
-}
-
-@media (min-width: 768px) {
 }

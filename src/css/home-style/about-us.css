@@ -26,7 +26,8 @@
 
 /* logo */
 .logo {
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
 }
 .logo__img {
   width: 100%;

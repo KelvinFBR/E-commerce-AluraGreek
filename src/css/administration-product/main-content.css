@@ -60,6 +60,7 @@
 
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -73,6 +74,7 @@
   font-size: var(--font-size-medium);
   font-weight: var(--Font-bold);
   color: var(--first-color-text);
+  margin-bottom: 2rem;
 }
 
 .main__btn-add-product {
@@ -159,6 +161,17 @@
   .main__card {
     max-width: 200px;
     max-height: 100%;
+  }
+
+  .main__head-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main__section-title {
+    margin-bottom: initial;
   }
 }
 @media (min-width: 768px) {
