@@ -20,10 +20,6 @@
   --form-valid-color: #04d939;
 }
 
-body {
-  background-color: var(--color-bg);
-}
-
 .login {
   position: relative;
   width: 100%;

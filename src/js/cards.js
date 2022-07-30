@@ -26,6 +26,11 @@ const createCards = (data, typeProduct) => {
       typeProductIndex = 0;
       break;
 
+    case typeProduct.length < 2:
+      //! En prueba
+      typeProductIndex = 0;
+      break;
+
     default:
       return console.warn("error de tipo producto");
   }

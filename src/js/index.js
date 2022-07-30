@@ -32,4 +32,9 @@ if (
   /login.html/g.test(pathName)
 ) {
   authenticationLoginPage();
+} else if (
+  /E-commerce-AluraGreek\/see-more-page.html/g.test(pathName) ||
+  /see-more-page.html/g.test(pathName)
+) {
+  searchInit(false);
 }
