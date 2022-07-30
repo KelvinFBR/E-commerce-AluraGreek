@@ -21,6 +21,24 @@ const alertSuccess = (img) => {
   });
 };
 
+const alertSuccessEdit = (img) => {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Producto Editado con exito",
+    confirmButtonColor: "#3085d6",
+    confirmButtonText: "OK",
+    width: "34em",
+    imageUrl: img,
+    imageWidth: "90%",
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      window.location.reload();
+    }
+  });
+};
+
 const alertAccessDenied = () => {
   document.querySelector("main").textContent = "";
   Swal.fire({
@@ -42,4 +60,4 @@ const alertAccessAllow = () => {
   });
 };
 
-export { alertAccessAllow, alertSuccess, alertAccessDenied };
+export { alertAccessAllow, alertSuccess, alertAccessDenied, alertSuccessEdit };

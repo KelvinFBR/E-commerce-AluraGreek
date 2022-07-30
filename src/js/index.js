@@ -9,6 +9,7 @@ import {
   authenticationLoginPage,
 } from "./auth.js";
 import { searchInit } from "./search.js";
+import { createProductSeeMore, seeMorePageInit } from "./see-more.js";
 
 const pathName = window.location.pathname;
 
@@ -20,6 +21,7 @@ if (
 ) {
   getDataProduct(["StarWars", "Consolas", "Diversos"]);
   searchInit(false);
+  seeMorePageInit();
 } else if (
   /E-commerce-AluraGreek\/administration-product.html/g.test(pathName) ||
   /administration-product.html/g.test(pathName)
@@ -37,4 +39,5 @@ if (
   /see-more-page.html/g.test(pathName)
 ) {
   searchInit(false);
+  createProductSeeMore();
 }

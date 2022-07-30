@@ -31,6 +31,11 @@
     <link rel="stylesheet" href="./src/css/login-style/login.css" />
     <link rel="stylesheet" href="./src/css/search-style/search.css" />
     <link rel="stylesheet" href="./src/css/modal-style/modal.css" />
+    <link rel="stylesheet" href="./src/css/add-product-style/add-product.css" />
+    <link
+      rel="stylesheet"
+      href="./src/css/administration-product/modal-form.css"
+    />
 
     <title>administration product</title>
   </head>
@@ -70,6 +75,77 @@
     </header>
 
     <main class="main">
+      <section class="modal__form">
+        <form class="add-product__from">
+          <div class="modal__close-edit">
+            <img
+              class="modal__close"
+              src="./src/assets/icon/Close.svg"
+              alt="icono de cierre de modal"
+            />
+          </div>
+
+          <h2 class="add-product__title">Editar producto</h2>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="urlImg">
+              URL de la imagen
+            </label>
+            <input
+              class="add-product__field-input"
+              name="urlImg"
+              type="text"
+              id="urlImg"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="category">
+              Categoría
+            </label>
+            <input
+              class="add-product__field-input"
+              name="category"
+              type="text"
+              id="category"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="name">
+              Nombre del producto
+            </label>
+            <input
+              class="add-product__field-input"
+              name="name"
+              type="text"
+              id="name"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="price">
+              Precio del producto
+            </label>
+            <input
+              class="add-product__field-input"
+              name="price"
+              type="text"
+              id="price"
+            />
+          </div>
+          <div class="add-product__field">
+            <label class="add-product__field-label" for="description">
+              Descripción del producto
+            </label>
+
+            <textarea
+              class="add-product__field-textarea"
+              name="description"
+              id="description"
+            ></textarea>
+          </div>
+
+          <button class="add-product__btn">Editar Producto</button>
+        </form>
+      </section>
+
       <!-- administration product -->
       <section class="main__section-product">
         <div class="main__head-section">

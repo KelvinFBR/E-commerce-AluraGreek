@@ -1,3 +1,4 @@
+import { deleteProduct, editProduct } from "./action-admin.js";
 import { createModal, handleModalClose } from "./modal.js";
 
 const templateCard = document.querySelector("#template-card")?.content;
@@ -23,11 +24,6 @@ const createCards = (data, typeProduct) => {
       break;
 
     case "All":
-      typeProductIndex = 0;
-      break;
-
-    case typeProduct.length < 2:
-      //! En prueba
       typeProductIndex = 0;
       break;
 
@@ -88,11 +84,22 @@ const getDataProduct = (typeProduct) => {
 
 //* Evento click para las cards
 document.addEventListener("click", (e) => {
+  const idProduct = e.target.dataset.id;
+
   if (e.target.matches(".main__card-link")) {
     e.preventDefault();
     modal.classList.add("active");
 
-    createModal(e.target.dataset.id);
+    createModal(idProduct);
+  }
+
+  //*Accciones eliminar y editar
+  if (e.target.matches(".action__delete")) {
+    deleteProduct(idProduct);
+  }
+
+  if (e.target.matches(".action__edit")) {
+    editProduct(idProduct);
   }
 });
 
