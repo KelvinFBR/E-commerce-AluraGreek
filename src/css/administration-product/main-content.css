@@ -165,6 +165,13 @@ button.swal2-styled.swal2-cancel {
 .main__card-img-action {
   margin: 1rem;
   cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.action__edit:hover,
+.action__delete:hover {
+  transform: scale(1.4);
+  filter: drop-shadow(0 0 0.5rem #2a7ae4);
 }
 
 @media (min-width: 400px) {
