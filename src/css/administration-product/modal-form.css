@@ -55,6 +55,7 @@
   padding: 1rem;
   background-color: var(--color-white);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.25s ease-in-out;
 
   border-radius: 100%;
   cursor: pointer;
@@ -62,4 +63,8 @@
 
 .modal__close {
   width: 100%;
+}
+
+.modal__close-edit:hover {
+  transform: scale(1.1);
 }
