@@ -7,12 +7,12 @@ import {
   authenticationAdminPage,
   authenticationInit,
   authenticationLoginPage,
+  authenticationPerfilPage,
 } from "./auth.js";
 import { searchInit } from "./search.js";
 import { createProductSeeMore, seeMorePageInit } from "./see-more.js";
 
 const pathName = window.location.pathname;
-
 authenticationInit();
 
 if (
@@ -22,6 +22,7 @@ if (
   getDataProduct(["StarWars", "Consolas", "Diversos"]);
   searchInit(false);
   seeMorePageInit();
+  authenticationPerfilPage();
 } else if (
   /E-commerce-AluraGreek\/administration-product.html/g.test(pathName) ||
   /administration-product.html/g.test(pathName)

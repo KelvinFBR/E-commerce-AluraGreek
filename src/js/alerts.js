@@ -21,6 +21,47 @@ const alertSuccess = (img) => {
   });
 };
 
+const deleteProductAlert = (id, img) => {
+  Swal.fire({
+    position: "center",
+    title: "Deseas Eliminar este Producto?",
+    icon: "warning",
+
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Eliminar",
+    cancelButtonText: "Cancelar",
+
+    width: "34em",
+    imageUrl: img,
+    imageWidth: "90%",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Producto Eliminado con exito",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK",
+        width: "34em",
+        imageUrl: img,
+        imageWidth: "90%",
+      }).then(async (result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          await fetch(`https://aluragreek-api.herokuapp.com/productos/${id}`, {
+            method: "DELETE",
+          });
+
+          //* recargar;
+          window.location.reload();
+        }
+      });
+    }
+  });
+};
+
 const alertSuccessEdit = (img) => {
   Swal.fire({
     position: "center",
@@ -60,4 +101,10 @@ const alertAccessAllow = () => {
   });
 };
 
-export { alertAccessAllow, alertSuccess, alertAccessDenied, alertSuccessEdit };
+export {
+  alertAccessAllow,
+  alertSuccess,
+  alertAccessDenied,
+  alertSuccessEdit,
+  deleteProductAlert,
+};

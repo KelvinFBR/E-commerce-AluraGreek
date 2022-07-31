@@ -1,6 +1,7 @@
 import { alertAccessAllow, alertAccessDenied } from "./alerts.js";
 
 const userAuth = { auth: false };
+const pathName = window.location.pathname;
 
 const authenticationInit = () => {
   const storageAuth = JSON.parse(sessionStorage.getItem("auth"));
@@ -19,10 +20,11 @@ const authentication = () => {
 const authenticationAdminPage = () => {
   const storageAuth = JSON.parse(sessionStorage.getItem("auth"));
 
+  console.log(storageAuth.auth);
+
   if (storageAuth) {
     if (!storageAuth.auth) {
       console.log("Permisos Denegado");
-
       alertAccessDenied();
 
       setTimeout(() => {
@@ -31,6 +33,22 @@ const authenticationAdminPage = () => {
 
       return;
     }
+  }
+};
+const authenticationPerfilPage = () => {
+  const storageAuth = JSON.parse(sessionStorage.getItem("auth"));
+
+  console.log(storageAuth.auth);
+
+  if (storageAuth) {
+    if (storageAuth.auth) {
+      console.log(document.querySelector(".nav__btn-login"));
+      document.querySelector(".nav__btn-login").style.display = "none";
+      console.log("isTrue");
+      return;
+    }
+
+    document.querySelector(".avatar").style.display = "none";
   }
 };
 
@@ -55,4 +73,5 @@ export {
   authenticationLoginPage,
   authenticationInit,
   authentication,
+  authenticationPerfilPage,
 };

@@ -1,4 +1,5 @@
 import { deleteProduct, editProduct } from "./action-admin.js";
+import { deleteProductAlert } from "./alerts.js";
 import { createModal, handleModalClose } from "./modal.js";
 
 const templateCard = document.querySelector("#template-card")?.content;

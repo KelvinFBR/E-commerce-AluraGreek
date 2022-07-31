@@ -1,8 +1,10 @@
-import { alertSuccessEdit } from "./alerts.js";
+import { alertSuccessEdit, deleteProductAlert } from "./alerts.js";
 
 const formProductEdit = document.querySelector(".add-product__from");
-
 const modal = document.querySelector(".modal__form");
+const pathName = window.location.pathname;
+
+let idProduct;
 
 const toggleModalEdit = (modal) => {
   const modalCloseEdit = document.querySelector(".modal__close-edit");
@@ -14,16 +16,24 @@ const toggleModalEdit = (modal) => {
 };
 
 const deleteProduct = async (id) => {
-  await fetch(`https://aluragreek-api.herokuapp.com/productos/${id}`, {
-    method: "DELETE",
-  });
+  try {
+    const res = await fetch(
+      `https://aluragreek-api.herokuapp.com/productos?id=${id}`
+    );
 
-  //* recargar;
-  window.location.reload();
+    const data = await res.json();
+
+    const { imagen } = data[0];
+    console.log(imagen);
+    deleteProductAlert(id, imagen);
+  } catch (error) {
+    console.warn(error);
+  }
 };
 
 const editProduct = async (id) => {
   try {
+    idProduct = id;
     const res = await fetch(
       `https://aluragreek-api.herokuapp.com/productos?id=${id}`
     );
@@ -42,57 +52,63 @@ const editProduct = async (id) => {
     toggleModalEdit(modal);
     //* recargar;
     //   window.location.reload();
-
-    getDataEdit(id);
   }
 };
 
-const getDataEdit = (id) => {
+console.log(pathName);
+
+if (
+  /E-commerce-AluraGreek\/administration-product.html/g.test(pathName) ||
+  /administration-product.html/g.test(pathName)
+) {
+  formProductEdit.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = new FormData(formProductEdit);
+
+    const name = data.get("name");
+    const price = data.get("price");
+    const img = data.get("urlImg");
+    const description = data.get("description");
+    const category = data.get("category");
+    getDataEdit(idProduct, name, price, img, description, category);
+  });
+}
+
+const getDataEdit = async (id, name, price, img, description, category) => {
   try {
-    formProductEdit.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    //* message alert
+    if (
+      name.trim().length <= 0 ||
+      price.trim().length <= 0 ||
+      description.trim().length <= 10 ||
+      category.trim().length <= 0 ||
+      !/https/g.test(img)
+    ) {
+      return {};
+    } else {
+      const dataProduct = {
+        nombre: name,
+        precio: price,
+        descripcion: description,
+        imagen: img,
+        categoria: category,
+        id: new Date().getTime(),
+      };
 
-      const data = new FormData(formProductEdit);
+      await fetch(`https://aluragreek-api.herokuapp.com/productos/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(dataProduct),
 
-      const name = data.get("name");
-      const price = data.get("price");
-      const img = data.get("urlImg");
-      const description = data.get("description");
-      const category = data.get("category");
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-      //* message alert
-      if (
-        name.trim().length <= 0 ||
-        price.trim().length <= 0 ||
-        description.trim().length <= 10 ||
-        category.trim().length <= 0 ||
-        !/https/g.test(img)
-      ) {
-        return {};
-      } else {
-        const dataProduct = {
-          nombre: name,
-          precio: price,
-          descripcion: description,
-          imagen: img,
-          categoria: category,
-          id: new Date().getTime(),
-        };
-
-        await fetch(`https://aluragreek-api.herokuapp.com/productos/${id}`, {
-          method: "PUT",
-          body: JSON.stringify(dataProduct),
-
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-
-        //* alert producto agregado
-        alertSuccessEdit(img);
-        console.log("actualizado");
-      }
-    });
+      //* alert producto agregado
+      alertSuccessEdit(img);
+      console.log("actualizado");
+    }
   } catch (error) {
     console.log(error);
   }

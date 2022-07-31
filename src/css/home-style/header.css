@@ -20,6 +20,18 @@
   width: 100%;
 }
 
+.avatar {
+  width: 40px;
+  height: 40px;
+  margin: 0.4rem;
+  background-color: var(--first-color-text);
+  border-radius: 50%;
+}
+
+.avatar img {
+  width: 100%;
+}
+
 /* nav */
 .nav {
   background-color: var(--color-white);
@@ -168,6 +180,10 @@
     background-color: var(--color-bg);
     border-radius: 5rem;
   }
+  .avatar {
+    order: 1;
+  }
+
   .nav__search-input {
     display: block;
   }

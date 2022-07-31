@@ -10,6 +10,16 @@ const seeMorePageInit = () => {
       const nameProduct = e.target.dataset.title;
       localStorage.setItem("nameProduct", JSON.stringify(nameProduct));
     }
+
+    // !! test
+    // if (e.target.matches(".arrow")) {
+    //   console.log("arrow");
+    //   e.target.disabled = true;
+    // }
+    // if (e.target.matches("img")) {
+    //   console.log("img");
+    //   e.target.disabled = true;
+    // }
   });
 };
 

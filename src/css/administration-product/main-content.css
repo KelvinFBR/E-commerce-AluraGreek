@@ -19,6 +19,12 @@ body {
   position: relative;
 }
 
+/* alert  */
+button.swal2-styled.swal2-confirm,
+button.swal2-styled.swal2-cancel {
+  font-size: 1.4rem;
+}
+
 .main {
 }
 
