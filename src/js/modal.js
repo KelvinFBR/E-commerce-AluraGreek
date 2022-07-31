@@ -7,10 +7,6 @@ const handleModalClose = (modal) => {
     modal.classList.remove("active");
     modal.textContent = "";
   });
-  modal.addEventListener("click", () => {
-    modal.classList.remove("active");
-    modal.textContent = "";
-  });
 };
 
 const createModal = async (id) => {
