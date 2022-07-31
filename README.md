@@ -1,4 +1,4 @@
-# TodoList
+# AluraGreek
 
 Este Proyecto del E-commerce AluraGreek nos permite gestionar nuestros productos como Administradores del E-commerce. Este proyecto me ayudo a aplicar varios de mis conocimientos como el uso de localStorage y sessionStorage para persistencia de los datos nos publicos y el uso/consumo de una api en la cual se almacenan los productos del E-commerce, En el cual me permitio realizar un CRUD de los productos.
 
@@ -40,3 +40,7 @@ Tambien contiene modal para realizar las eliminaciones y actualizaciones de los 
 Y si deseas realizar una busqueda rapida de los productos tienes un Search:
 
 ![search](https://i.imgur.com/Yi2jXZS.png)
+
+### Insignia por realizar el challenge
+
+![insignia](https://i.imgur.com/G5xktnH.png)
