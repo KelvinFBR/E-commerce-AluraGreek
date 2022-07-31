@@ -84,14 +84,15 @@ const getDataEdit = async (id, name, price, img, description, category) => {
   try {
     //* message alert
     if (
-      name.trim().length <= 0 ||
-      price.trim().length <= 0 ||
+      name.trim().length <= 3 ||
+      (price.trim().length <= 0 &&
+        !/^[0-9]{1,3}?(.)?[0-9]{1,3}$/.test(price)) ||
       description.trim().length <= 10 ||
       category.trim().length <= 0 ||
       !/https/g.test(img)
     ) {
       document.querySelector(".add-product__alert").textContent =
-        "Campos Vacios/Campos Incorrecto ";
+        "Campos Incompletos/Campos Incorrectos";
 
       return;
     } else {
