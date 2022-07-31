@@ -27,17 +27,18 @@ if (/add-product.html/g.test(pathName)) {
     const description = data.get("description");
     const category = data.get("category");
 
-    console.log(!/https/g.test(img));
+    console.log(/^[0-9]{1,3}?(.)?[0-9]{1,3}$/.test(price));
     //* message alert
     if (
-      name.trim().length <= 0 ||
-      price.trim().length <= 0 ||
+      name.trim().length <= 3 ||
+      (price.trim().length <= 0 &&
+        !/^[0-9]{1,3}?(.)?[0-9]{1,3}$/.test(price)) ||
       description.trim().length <= 10 ||
       category.trim().length <= 0 ||
       !/https/g.test(img)
     ) {
       document.querySelector(".add-product__alert").textContent =
-        "Campos Vacios/Campos Incorrecto ";
+        "Campos Incompletos/Campos Incorrectos";
 
       return;
     } else {
