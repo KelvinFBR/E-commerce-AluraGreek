@@ -15,6 +15,7 @@
   --first-color-text: #464646;
   --second-color-text: #a2a2a2;
   --color-bar-form: #c8c8c8;
+  --form-invalid-color: #e74645;
 }
 
 body {
@@ -133,4 +134,22 @@ button.swal2-styled.swal2-deny {
   color: var(--color-white);
   outline: 2px solid var(--firts-color);
   cursor: pointer;
+}
+
+.add-product__alert {
+  font-size: var(--font-size-small);
+  font-weight: var(--Font-medium);
+  color: var(--form-invalid-color);
+  text-align: center;
+  margin: 1rem 0;
+  animation: scale 0.5s alternate infinite ease-in-out;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }

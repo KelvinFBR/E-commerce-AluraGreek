@@ -36,8 +36,13 @@ if (/add-product.html/g.test(pathName)) {
       category.trim().length <= 0 ||
       !/https/g.test(img)
     ) {
-      return {};
+      document.querySelector(".add-product__alert").textContent =
+        "Campos Vacios/Campos Incorrecto ";
+
+      return;
     } else {
+      document.querySelector(".add-product__alert").textContent = "";
+
       const dataProduct = {
         nombre: name,
         precio: price,

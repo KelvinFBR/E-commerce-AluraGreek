@@ -5,21 +5,19 @@ const cardMain = document.querySelector(".main__section-cards");
 const SectionTitle = document.querySelector(".main__section-title");
 
 const seeMorePageInit = () => {
+  const arrow = document.querySelector(".arrow__img");
+
   document.addEventListener("click", (e) => {
+    let nameProduct = "";
+    document.removeEventListener("click", arrow);
+
     if (e.target.matches(".main__btn")) {
-      const nameProduct = e.target.dataset.title;
+      nameProduct = e.target.dataset.title;
+      localStorage.setItem("nameProduct", JSON.stringify(nameProduct));
+    } else if (e.target.matches(".arrow__img")) {
+      nameProduct = e.target.parentElement.parentElement.dataset.title;
       localStorage.setItem("nameProduct", JSON.stringify(nameProduct));
     }
-
-    // !! test
-    // if (e.target.matches(".arrow")) {
-    //   console.log("arrow");
-    //   e.target.disabled = true;
-    // }
-    // if (e.target.matches("img")) {
-    //   console.log("img");
-    //   e.target.disabled = true;
-    // }
   });
 };
 

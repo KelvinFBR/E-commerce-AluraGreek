@@ -24,7 +24,6 @@ const authenticationAdminPage = () => {
 
   if (storageAuth) {
     if (!storageAuth.auth) {
-      console.log("Permisos Denegado");
       alertAccessDenied();
 
       setTimeout(() => {
@@ -38,13 +37,9 @@ const authenticationAdminPage = () => {
 const authenticationPerfilPage = () => {
   const storageAuth = JSON.parse(sessionStorage.getItem("auth"));
 
-  console.log(storageAuth.auth);
-
   if (storageAuth) {
     if (storageAuth.auth) {
-      console.log(document.querySelector(".nav__btn-login"));
       document.querySelector(".nav__btn-login").style.display = "none";
-      console.log("isTrue");
       return;
     }
 

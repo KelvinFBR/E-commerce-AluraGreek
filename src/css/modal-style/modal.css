@@ -101,6 +101,7 @@ body {
   padding: 1rem;
   background-color: var(--color-white);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.25s ease-in-out;
 
   border-radius: 100%;
   cursor: pointer;
@@ -108,6 +109,10 @@ body {
 
 .modal__close {
   width: 100%;
+}
+
+.modal__close-container:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 680px) {
