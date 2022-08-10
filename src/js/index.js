@@ -16,7 +16,6 @@ const pathName = window.location.pathname;
 authenticationInit();
 
 if (
-  /\//g.test(pathName) ||
   /E-commerce-AluraGreek\/index.html/g.test(pathName) ||
   /index.html/g.test(pathName)
 ) {
