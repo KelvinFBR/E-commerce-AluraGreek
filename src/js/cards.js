@@ -8,6 +8,20 @@ const modal = document.querySelector("#modal");
 
 let typeProductIndex;
 
+const loading = () => {
+  cardContainer.forEach((container) => {
+    const div = document.createElement("div");
+    div.classList.add("loading");
+
+    const img = document.createElement("img");
+    img.src = "./src/assets/img/loading.svg";
+
+    div.appendChild(img);
+
+    container.appendChild(div);
+  });
+};
+
 const createCards = (data, typeProduct) => {
   const fragment = document.createDocumentFragment();
 
@@ -56,6 +70,8 @@ const createCards = (data, typeProduct) => {
 
 const getAllDataProduct = async () => {
   try {
+    loading();
+
     const res = await fetch("https://aluragreek-api.herokuapp.com/productos");
     const data = await res.json();
 
@@ -68,6 +84,8 @@ const getAllDataProduct = async () => {
 
 const getDataProduct = (typeProduct) => {
   try {
+    loading();
+
     typeProduct.forEach(async (type) => {
       const res = await fetch(
         `https://aluragreek-api.herokuapp.com/productos?categoria=${type}`
@@ -79,7 +97,6 @@ const getDataProduct = (typeProduct) => {
     });
   } catch (error) {
     console.log(error);
-  } finally {
   }
 };
 
@@ -103,7 +120,5 @@ document.addEventListener("click", (e) => {
     editProduct(idProduct);
   }
 });
-
-// console.log(window.location.pathname);
 
 export { getDataProduct, getAllDataProduct };

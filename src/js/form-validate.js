@@ -32,7 +32,6 @@ form.addEventListener("submit", (e) => {
 
   if (name.trim().length >= 3 && message.trim().length >= 20) {
     console.log("enviando mensaje");
-    console.log({ name, message });
     return;
   }
 
@@ -63,7 +62,6 @@ const fetchData = async (email, pass) => {
 
     data.forEach((user) => {
       const { email: userEmail, password: userPass } = user;
-      console.log({ userEmail, userPass });
       if (userEmail === email && userPass === pass) {
         fieldValidate.textContent = "";
 

@@ -27,13 +27,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eaf2fdb0;
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(6px);
+  transition: all 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: scale(0);
+  opacity: 0;
 }
 
 .modal__form.active {
   transform: scale(1);
+  opacity: 1;
 }
 
 .add-product__from {
@@ -67,4 +69,11 @@
 
 .modal__close-edit:hover {
   transform: scale(1.1);
+}
+
+/** eliminar el backgroud del modal de sweetalert */
+.swal2-container.swal2-backdrop-show,
+.swal2-container.swal2-noanimation {
+  backdrop-filter: blur(6px);
+  background: none !important;
 }

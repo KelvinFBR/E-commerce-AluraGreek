@@ -20,8 +20,6 @@ const authentication = () => {
 const authenticationAdminPage = () => {
   const storageAuth = JSON.parse(sessionStorage.getItem("auth"));
 
-  console.log(storageAuth.auth);
-
   if (storageAuth) {
     if (!storageAuth.auth) {
       alertAccessDenied();

@@ -27,7 +27,7 @@ body {
   z-index: 10;
   width: 100vw;
   height: 100vh;
-  background-color: #eaf2fdb0;
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
