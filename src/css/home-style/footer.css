@@ -27,3 +27,12 @@
   text-align: center;
   font-size: var(--font-size-normal);
 }
+
+.footer__owner a {
+  color: var(--firts-color);
+  transition: color 0.15s ease-in;
+}
+
+.footer__owner a:hover {
+  color: var(--first-color-text);
+}
