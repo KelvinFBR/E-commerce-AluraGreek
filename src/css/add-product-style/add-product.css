@@ -47,10 +47,11 @@ button.swal2-styled.swal2-deny {
   font-weight: var(--Font-bold);
   line-height: 2rem;
 }
-.add-product__from {
+.add-product form {
   width: 100%;
   margin: 5rem 0;
 }
+
 .add-product__field {
   background-color: var(--color-white);
   margin: 2rem 0;
