@@ -8,7 +8,6 @@ let idProduct;
 
 const toggleModalEdit = (modal) => {
   modal.classList.add("active");
-  document.body.style.overflow = "hidden";
 
   document.addEventListener("click", (e) => {
     if (
@@ -17,7 +16,6 @@ const toggleModalEdit = (modal) => {
       e.target.matches(".modal__close-edit")
     ) {
       modal.classList.remove("active");
-      document.body.style.overflow = "initial";
     }
   });
 };

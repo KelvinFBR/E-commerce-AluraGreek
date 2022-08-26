@@ -27,16 +27,22 @@ body {
   z-index: 10;
   width: 100vw;
   height: 100vh;
-  backdrop-filter: blur(6px);
+  /* backdrop-filter: blur(6px); */
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: scale(0);
+  border-radius: 50%;
+  opacity: 0;
 }
 
 .modal.active {
+  border-radius: 0;
   transform: scale(1);
+  opacity: 1;
 }
 
 .modal__content {
