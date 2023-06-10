@@ -50,9 +50,12 @@ const deleteProductAlert = (id, img) => {
       }).then(async (result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          await fetch(`https://aluragreek-api.herokuapp.com/productos/${id}`, {
-            method: "DELETE",
-          });
+          await fetch(
+            `https://api-aluragreek-production.up.railway.app/productos/${id}`,
+            {
+              method: "DELETE",
+            }
+          );
 
           //* recargar;
           window.location.reload();

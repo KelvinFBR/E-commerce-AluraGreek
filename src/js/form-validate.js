@@ -56,7 +56,9 @@ const loadPageAdmin = () => {
 
 const fetchData = async (email, pass) => {
   try {
-    const res = await fetch("https://aluragreek-api.herokuapp.com/perfil");
+    const res = await fetch(
+      "https://api-aluragreek-production.up.railway.app/perfil"
+    );
 
     const data = await res.json();
 

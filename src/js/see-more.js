@@ -26,7 +26,7 @@ const createCards = async (typeProduct) => {
 
   try {
     const res = await fetch(
-      `https://aluragreek-api.herokuapp.com/productos?categoria=${typeProduct}`
+      `https://api-aluragreek-production.up.railway.app/productos?categoria=${typeProduct}`
     );
 
     const data = await res.json();

@@ -23,7 +23,7 @@ const toggleModalEdit = (modal) => {
 const deleteProduct = async (id) => {
   try {
     const res = await fetch(
-      `https://aluragreek-api.herokuapp.com/productos?id=${id}`
+      `https://api-aluragreek-production.up.railway.app/productos?id=${id}`
     );
 
     const data = await res.json();
@@ -39,7 +39,7 @@ const editProduct = async (id) => {
   try {
     idProduct = id;
     const res = await fetch(
-      `https://aluragreek-api.herokuapp.com/productos?id=${id}`
+      `https://api-aluragreek-production.up.railway.app/productos?id=${id}`
     );
 
     const data = await res.json();
@@ -104,14 +104,17 @@ const getDataEdit = async (id, name, price, img, description, category) => {
         id: new Date().getTime(),
       };
 
-      await fetch(`https://aluragreek-api.herokuapp.com/productos/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(dataProduct),
+      await fetch(
+        `https://api-aluragreek-production.up.railway.app/productos/${id}`,
+        {
+          method: "PUT",
+          body: JSON.stringify(dataProduct),
 
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       //* alert producto agregado
       alertSuccessEdit(img);

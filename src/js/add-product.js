@@ -5,14 +5,17 @@ const formProduct = document.querySelector(".add-product__from");
 const pathName = window.location.pathname;
 
 const addProduct = async (product) => {
-  const res = await fetch("https://aluragreek-api.herokuapp.com/productos", {
-    method: "POST",
-    body: JSON.stringify(product),
+  const res = await fetch(
+    "https://api-aluragreek-production.up.railway.app/productos",
+    {
+      method: "POST",
+      body: JSON.stringify(product),
 
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 };
 
 if (/add-product.html/g.test(pathName)) {

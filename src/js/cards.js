@@ -72,7 +72,9 @@ const getAllDataProduct = async () => {
   try {
     loading();
 
-    const res = await fetch("https://aluragreek-api.herokuapp.com/productos");
+    const res = await fetch(
+      "https://api-aluragreek-production.up.railway.app/productos"
+    );
     const data = await res.json();
 
     createCards(data, "All");
@@ -88,7 +90,7 @@ const getDataProduct = (typeProduct) => {
 
     typeProduct.forEach(async (type) => {
       const res = await fetch(
-        `https://aluragreek-api.herokuapp.com/productos?categoria=${type}`
+        `https://api-aluragreek-production.up.railway.app/productos?categoria=${type}`
       );
 
       const data = await res.json();

@@ -14,7 +14,7 @@ const createModal = async (id) => {
 
   try {
     const res = await fetch(
-      `https://aluragreek-api.herokuapp.com/productos?id=${id}`
+      `https://api-aluragreek-production.up.railway.app/productos?id=${id}`
     );
 
     const data = await res.json();

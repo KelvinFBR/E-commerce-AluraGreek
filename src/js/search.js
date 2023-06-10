@@ -43,7 +43,9 @@ const searchProduct = async (word, page) => {
 
 const getAllDataProduct = async () => {
   try {
-    const res = await fetch("https://aluragreek-api.herokuapp.com/productos");
+    const res = await fetch(
+      "https://api-aluragreek-production.up.railway.app/productos"
+    );
     const data = await res.json();
 
     allProduct = [...data];
