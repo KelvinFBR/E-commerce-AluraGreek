@@ -44,7 +44,7 @@ const searchProduct = async (word, page) => {
 const getAllDataProduct = async () => {
   try {
     const res = await fetch(
-      "https://api-aluragreek-production.up.railway.app/productos"
+      "https://api-aluragreek.onrender.com/productos"
     );
     const data = await res.json();
 

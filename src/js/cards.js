@@ -73,7 +73,7 @@ const getAllDataProduct = async () => {
     loading();
 
     const res = await fetch(
-      "https://api-aluragreek-production.up.railway.app/productos"
+      "https://api-aluragreek.onrender.com/productos"
     );
     const data = await res.json();
 
@@ -90,7 +90,7 @@ const getDataProduct = (typeProduct) => {
 
     typeProduct.forEach(async (type) => {
       const res = await fetch(
-        `https://api-aluragreek-production.up.railway.app/productos?categoria=${type}`
+        `https://api-aluragreek.onrender.com/productos?categoria=${type}`
       );
 
       const data = await res.json();

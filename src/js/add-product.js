@@ -6,7 +6,7 @@ const pathName = window.location.pathname;
 
 const addProduct = async (product) => {
   const res = await fetch(
-    "https://api-aluragreek-production.up.railway.app/productos",
+    "https://api-aluragreek.onrender.com/productos",
     {
       method: "POST",
       body: JSON.stringify(product),

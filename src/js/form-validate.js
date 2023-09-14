@@ -57,7 +57,7 @@ const loadPageAdmin = () => {
 const fetchData = async (email, pass) => {
   try {
     const res = await fetch(
-      "https://api-aluragreek-production.up.railway.app/perfil"
+      "https://api-aluragreek.onrender.com/perfil"
     );
 
     const data = await res.json();

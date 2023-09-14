@@ -51,7 +51,7 @@ const deleteProductAlert = (id, img) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           await fetch(
-            `https://api-aluragreek-production.up.railway.app/productos/${id}`,
+            `https://api-aluragreek.onrender.com/productos/${id}`,
             {
               method: "DELETE",
             }

@@ -14,7 +14,7 @@ const createModal = async (id) => {
 
   try {
     const res = await fetch(
-      `https://api-aluragreek-production.up.railway.app/productos?id=${id}`
+      `https://api-aluragreek.onrender.com/productos?id=${id}`
     );
 
     const data = await res.json();

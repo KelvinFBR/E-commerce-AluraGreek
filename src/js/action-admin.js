@@ -23,7 +23,7 @@ const toggleModalEdit = (modal) => {
 const deleteProduct = async (id) => {
   try {
     const res = await fetch(
-      `https://api-aluragreek-production.up.railway.app/productos?id=${id}`
+      `https://api-aluragreek.onrender.com/productos?id=${id}`
     );
 
     const data = await res.json();
@@ -39,7 +39,7 @@ const editProduct = async (id) => {
   try {
     idProduct = id;
     const res = await fetch(
-      `https://api-aluragreek-production.up.railway.app/productos?id=${id}`
+      `https://api-aluragreek.onrender.com/productos?id=${id}`
     );
 
     const data = await res.json();
@@ -105,7 +105,7 @@ const getDataEdit = async (id, name, price, img, description, category) => {
       };
 
       await fetch(
-        `https://api-aluragreek-production.up.railway.app/productos/${id}`,
+        `https://api-aluragreek.onrender.com/productos/${id}`,
         {
           method: "PUT",
           body: JSON.stringify(dataProduct),

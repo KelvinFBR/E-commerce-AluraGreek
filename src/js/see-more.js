@@ -26,7 +26,7 @@ const createCards = async (typeProduct) => {
 
   try {
     const res = await fetch(
-      `https://api-aluragreek-production.up.railway.app/productos?categoria=${typeProduct}`
+      `https://api-aluragreek.onrender.com/productos?categoria=${typeProduct}`
     );
 
     const data = await res.json();
